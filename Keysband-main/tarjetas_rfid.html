@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas RFID - HotelAdmin Pro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+    <link rel="stylesheet" href="src/css/theme.css">
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/dashboard.css">
+</head>
+<body class="light-mode">
+    <div class="dashboard-container">
+        <!-- SIDEBAR/MENÚ LATERAL -->
+        <div class="sidebar" id="sidebar">
+            <a href="#" class="sidebar-brand">
+                <i class="fa-solid fa-hotel"></i> 
+                Hotel<span>Admin</span>
+            </a>
+            <nav class="nav flex-column">
+                <a class="nav-link" href="dashboard.html">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </a>
+                <a class="nav-link" href="habitaciones.html">
+                    <i class="fa-solid fa-bed"></i> Habitaciones
+                </a>
+                <a class="nav-link" href="reservas.html">
+                    <i class="fa-solid fa-calendar-check"></i> Reservas
+                </a>
+                <a class="nav-link" href="clientes.html">
+                    <i class="fa-solid fa-users"></i> Clientes
+                </a>
+                <a class="nav-link" href="reportes.html">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> Reportes
+                </a>
+                <a class="nav-link active" href="tarjetas_rfid.html">
+                    <i class="fa-solid fa-id-card"></i> Tarjetas RFID
+                </a>
+            </nav>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <!-- BARRA SUPERIOR -->
+            <div class="topbar">
+                <div>
+                    <h4 class="mb-0 d-inline-block align-middle fw-bold">Gestión de Tarjetas RFID</h4>
+                </div>
+                <div class="d-flex align-items-center topbar-user">
+                    <button class="theme-btn" id="btnThemeDashboard" title="Cambiar tema">
+                        <i class="fa-solid fa-moon" id="themeIconDash"></i>
+                    </button>
+                    <span class="me-3 d-none d-sm-inline">
+                        <i class="fa-solid fa-user-circle fs-4 align-middle me-2"></i> 
+                        <span id="userName">Admin Principal</span>
+                    </span>
+                    <button class="btn btn-sm btn-outline-danger ms-3" id="btnLogout">
+                        <i class="fa-solid fa-sign-out-alt"></i> Salir
+                    </button>
+                </div>
+            </div>
+
+            <!-- TABLA DE RFIDs -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="dash-panel">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5>Últimos Registros del ESP32</h5>
+                            <button class="btn btn-primary btn-sm" id="btnRefreshRfid">
+                                <i class="fa-solid fa-sync"></i> Actualizar tabla
+                            </button>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-custom table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>UID de Tarjeta</th>
+                                        <th>Estado</th>
+                                        <th>Fecha de Exploración</th>
+                                        <th>Acciones Rápidas</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rfidTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center text-muted">Cargando tarjetas RFID de la base de datos...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script type="module" src="src/js/tarjetas_rfid.js"></script>
+</body>
+</html>

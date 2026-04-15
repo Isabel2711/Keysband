@@ -1,0 +1,109 @@
+/**
+ * Estilos específicos para la página de Login
+ */
+
+.login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Botón de tema en la esquina superior derecha */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+}
+
+/* Tarjeta de login */
+.login-card {
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    border-top: 4px solid var(--accent-purple);
+    animation: fadeIn 0.5s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Texto del formulario */
+.form-label {
+    color: var(--text-main);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-label i {
+    color: var(--accent-purple);
+    width: 18px;
+    text-align: center;
+}
+
+/* Checkbox */
+.form-check-input {
+    background-color: var(--bg-inner);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+
+.form-check-label {
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+/* Encabezado del login */
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.5rem;
+        max-width: 100%;
+        margin: 0 20px;
+    }
+
+    .login-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+    }
+}
