@@ -1,0 +1,91 @@
+/**
+ * Variables de tema y estilos relacionados con temas
+ */
+
+:root {
+    /* Modo Oscuro (Por defecto) */
+    --bg-main: #12141d;
+    --bg-card: #1e2130;
+    --bg-inner: #2a2d3e;
+    --text-main: #ffffff;
+    --text-muted: #a0a5b1;
+    --border-color: #3a3f58;
+    --accent-purple: #6f42c1;
+    --accent-blue: #0d6efd;
+    --sidebar-hover: rgba(111, 66, 193, 0.2);
+    --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Modo Claro */
+body.light-mode {
+    --bg-main: #f0f2f5;
+    --bg-card: #ffffff;
+    --bg-inner: #f8f9fa;
+    --text-main: #2b3445;
+    --text-muted: #6c757d;
+    --border-color: #e9ecef;
+    --accent-purple: #6f42c1;
+    --accent-blue: #0d6efd;
+    --sidebar-hover: rgba(111, 66, 193, 0.1);
+    --shadow-card: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos de formularios según tema */
+.form-control {
+    background-color: var(--bg-inner);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: var(--bg-inner);
+    color: var(--text-main);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* Botones según tema */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    border: none;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* Texto muted */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Botón de tema */
+.theme-toggle,
+.theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover,
+.theme-btn:hover {
+    transform: scale(1.1);
+    color: var(--accent-purple);
+}

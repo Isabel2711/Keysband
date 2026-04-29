@@ -1,0 +1,166 @@
+/**
+ * Estilos globales para toda la aplicación
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-inner);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease;
+}
+
+/* Utilidades */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.shadow-custom {
+    box-shadow: var(--shadow-card);
+}
+
+.border-custom {
+    border: 1px solid var(--border-color);
+}
+
+.bg-custom {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
+/* Loader/Spinner */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+}
+
+.loader-overlay .spinner-border {
+    border-width: 3px;
+}
+
+/* Respuestas */
+.alert-custom {
+    background-color: var(--bg-inner);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+.alert-custom.success {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.alert-custom.error {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.alert-custom.warning {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+/* Tipografía */
+p {
+    margin: 0;
+}
+
+/* Enlaces */
+a {
+    color: var(--accent-purple);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+}
+
+/* Tablas */
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .d-md-none {
+        display: block !important;
+    }
+
+    .d-md-block {
+        display: none !important;
+    }
+}
